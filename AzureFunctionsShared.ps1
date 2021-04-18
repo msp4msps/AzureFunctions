@@ -12,6 +12,7 @@ $secPas = $ApplicationSecret| ConvertTo-SecureString -AsPlainText -Force
 $tenantID = $ENV:tenantID
 $refreshToken = $ENV:refeshToken
 $ExchangeRefreshToken = $ENV:ExchangeRefreshToken
+$upn = $ENV:upn
 $credential = New-Object System.Management.Automation.PSCredential($ApplicationId, $secPas)
 ###Connect to your Own Partner Center to get a list of customers/tenantIDs #########
 $aadGraphToken = New-PartnerAccessToken -ApplicationId $ApplicationId -Credential $credential -RefreshToken $refreshToken -Scopes 'https://graph.windows.net/.default' -ServicePrincipal -Tenant $tenantID
